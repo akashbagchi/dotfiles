@@ -1,3 +1,4 @@
+
 vim.opt.guicursor = ""
 
 vim.opt.nu = true
@@ -14,7 +15,15 @@ vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = vim.fn.expand('$LOCALAPPDATA') .. "\\nvim-data\\undo"
+-- Detect the OS and set the appropriate path
+if vim.fn.has('win32') == 1 then
+    -- Windows path
+    vim.opt.undodir = vim.fn.expand('$LOCALAPPDATA') .. '\\nvim-data\\undo/'
+else
+    -- Unix-like systems (Mac and Linux)
+    vim.opt.undodir = os.getenv("HOME") .. "/.local/share/nvim/undo/"
+end
+
 vim.opt.undofile = true
 
 vim.opt.hlsearch = false
