@@ -94,17 +94,7 @@ Your current configuration has some platform-specific settings that need attenti
 
 ### For Windows Users
 
-1. In `lua/theprimeagen/set.lua`, the undo directory is Windows-specific. For cross-platform support, modify:
-
-```lua
--- Replace this line
-vim.opt.undodir = vim.fn.expand('$LOCALAPPDATA') .. "\\nvim-data\\undo"
-
--- With this
-vim.opt.undodir = vim.fn.stdpath("data") .. "/undo"
-```
-
-2. In `lua/theprimeagen/remap.lua`, uncomment Windows keybindings and comment out Mac ones:
+1. In `lua/theprimeagen/remap.lua`, uncomment Windows keybindings and comment out Mac ones:
 
 ```lua
 -- Uncomment these lines for Windows
@@ -116,7 +106,7 @@ vim.keymap.set('v', '<C-/>', 'gc', { remap = true })
 -- vim.keymap.set('v', '<D-/>', 'gc', { remap = true })
 ```
 
-3. In `after/plugin/lsp.lua`, adjust completion keybindings:
+2. In `after/plugin/lsp.lua`, adjust completion keybindings:
 
 ```lua
 local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -137,9 +127,8 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 ### For macOS Users
 
 1. The configuration is already set up for macOS key bindings (`<D-/>` for comments, etc.)
-2. Change the undo directory path in `set.lua` as mentioned above
-3. Ensure your terminal emulator (iTerm2, Terminal.app, etc.) is set up to use your installed Nerd Font
-4. For Volar LSP to work correctly, update the TypeScript SDK path in `lsp.lua`:
+2. Ensure your terminal emulator (iTerm2, Terminal.app, etc.) is set up to use your installed Nerd Font
+3. For Volar LSP to work correctly, update the TypeScript SDK path in `lsp.lua`:
 
 ```lua
 lspconfig.volar.setup({
