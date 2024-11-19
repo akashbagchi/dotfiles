@@ -1,7 +1,8 @@
 local builtin = require('telescope.builtin')
 
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+-- Un-comment this out if you want to continue using netrw
+-- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
 vim.keymap.set('n', '<C-p>', builtin.git_files, {})
@@ -39,7 +40,7 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<leader>ft", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
@@ -51,6 +52,18 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
+
+-- Line comment: CTRL + / ( WINDOWS )
+-- vim.keymap.set('n', '<C-/>', 'gcc', { remap = true })
+-- vim.keymap.set('v', '<C-/>', 'gc', { remap = true })
+
+-- Line comment: CMD + / ( MAC )
+vim.keymap.set('n', '<D-/>', 'gcc', { remap = true })
+vim.keymap.set('v', '<D-/>', 'gc', { remap = true })
+
+-- Block comment: SHIFT + ALT + A
+vim.keymap.set('n', '<A-S-a>', 'gbc', { remap = true })
+vim.keymap.set('v', '<A-S-a>', 'gb', { remap = true })
 
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")

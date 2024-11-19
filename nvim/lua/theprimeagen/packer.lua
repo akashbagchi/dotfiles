@@ -12,8 +12,8 @@ return require('packer').startup(function(use)
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
-
-  use({
+-- use { "catppuccin/nvim", as = "catppuccin" }
+ use({
 	  'catppuccin/nvim',
 	  as = 'catppuccin',
 	  config = function()
@@ -76,19 +76,21 @@ return require('packer').startup(function(use)
   use("eandrju/cellular-automaton.nvim")
   use("laytan/cloak.nvim")
 
+-- comment out code quickly
   use {
-    'numToStr/Comment.nvim',
-    config = function()
-        require('Comment').setup()
-    end
+      'numToStr/Comment.nvim',
+      config = function()
+          require('Comment').setup()
+      end
   }
 
-  use {
+-- nvim-tree for file navigation
+use {
     'nvim-tree/nvim-tree.lua',
     requires = {
-        'nvim-tree/nvim-web-devicons',
+        'nvim-tree/nvim-web-devicons', -- optional, for file icons
     },
-  }
+}
 
 end)
 
