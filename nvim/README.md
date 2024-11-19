@@ -47,7 +47,7 @@ mkdir ~\AppData\Local\nvim
 3. Clone repository:
 
 ```powershell
-git clone <your-repo-url> ~\AppData\Local\nvim
+git clone https://github.com/akashbagchi/dotfiles.git ~\AppData\Local\nvim
 ```
 
 4. Install Packer:
@@ -78,7 +78,7 @@ mkdir -p ~/.config/nvim
 3. Clone repository:
 
 ```bash
-git clone <your-repo-url> ~/.config/nvim
+git clone https://github.com/akashbagchi/dotfiles.git ~/.config/nvim
 ```
 
 4. Install Packer:
