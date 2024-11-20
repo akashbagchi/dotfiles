@@ -90,8 +90,6 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 ## Platform-Specific Configuration Changes
 
-Your current configuration has some platform-specific settings that need attention. Here are the required changes:
-
 ### For Windows Users
 
 1. In `lua/theprimeagen/remap.lua`, uncomment Windows keybindings and comment out Mac ones:
