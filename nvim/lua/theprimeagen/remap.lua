@@ -65,6 +65,9 @@ vim.keymap.set('v', '<D-/>', 'gc', { remap = true })
 vim.keymap.set('n', '<A-S-a>', 'gbc', { remap = true })
 vim.keymap.set('v', '<A-S-a>', 'gb', { remap = true })
 
+vim.keymap.set('n', 'H', '^', { remap = true })
+vim.keymap.set('n', 'L', '$', { remap = true })
+
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
