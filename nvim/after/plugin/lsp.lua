@@ -10,6 +10,7 @@ lsp.ensure_installed({
     'volar',             -- Vue
     'eslint',           -- ESLint
     'rust_analyzer',     -- Rust support
+    'pyright',          -- Python
 })
 
 -- Fix Undefined global 'vim'
@@ -125,3 +126,31 @@ vim.diagnostic.config({
         prefix = '',
     },
 })
+
+-- Helper: pick the Python from .venv if present
+local function get_python_path(workspace)
+    local util = require('lspconfig.util')
+    workspace = workspace or vim.fn.getcwd()
+    local paths = {
+        workspace .. '/.venv/bin/python',
+        workspace .. '/venv/bin/python',
+    }
+    for _, p in ipairs(paths) do
+        if vim.fn.executable(p) == 1 then return p end
+    end
+    return vim.fn.exepath('python3') or 'python'
+end
+
+-- Python: pyright
+lspconfig.pyright.setup({
+    settings = {
+        python = {
+            pythonPath = get_python_path(vim.fn.getcwd()),
+            analysis = {
+                typeCheckingMode = "basic",     -- "off" | "basic"
+                autoImportCompletions = true,
+            },
+        },
+    },
+})
+
