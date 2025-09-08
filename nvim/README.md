@@ -241,7 +241,7 @@ lspconfig.volar.setup({
 
 ### LSP
 
-- `gd` - Go to definition
+- `gd/gD/gr/gi` - Go to definition/declaration/references/implementation
 - `K` - Hover documentation
 - `<leader>vws` - Workspace symbol search
 - `<leader>vd` - Open diagnostic float
@@ -269,6 +269,10 @@ lspconfig.volar.setup({
 - `<C-d>`/`<C-u>` - Scroll down/up (centered)
 - `<C-h/t/n/s>` - Navigate to Harpoon marks 1-4
 - `<C-e>` - Toggle Harpoon quick menu
+- `zz/zt/zb` - Recenter, scroll to top, scroll to bottom of screen
+- `H/M/L` - Move to top/middle/bottom of visible screen
+- `} / {` - Move forward/backward by paragraph
+- `]] / [[` - Jump to next/prev function/class
 
 ### Focus Mode
 
