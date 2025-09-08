@@ -30,12 +30,25 @@ The following LSP servers will be automatically installed via Mason:
 
 ### Windows
 
-1. Install Neovim:
+1. Install Neovim and core CLIs:
 
 ```powershell
 winget install Neovim.Neovim
 # or
 choco install neovim
+
+winget install Git.Git
+winget install OpenJS.NodeJS.LTS
+winget install Python.Python.3.12
+winget install BurntSushi.ripgrep.MSVC
+winget install sharkdp.fd
+winget install junegunn.fzf
+
+# C/C++ build tools (needed for Treesitter & native plugins)
+# Either MSVC Build Tools OR MinGW-w64:
+winget install Microsoft.VisualStudio.2022.BuildTools
+# OR
+# choco install mingw
 ```
 
 2. Create configuration directory:
@@ -56,18 +69,39 @@ git clone https://github.com/akashbagchi/dotfiles.git ~\AppData\Local\nvim
 git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
 ```
 
+5. First neovim launch + setup
+
+```powershell
+# Open nvim
+nvim .
+
+# Inside nvim, do
+:so %LOCALAPPDATA%\nvim\init.lua
+:PackerSync
+:TSUpdate
+:Mason
+```
+
 ### macOS/Linux
 
-1. Install Neovim:
+0. (Optional) Nuke old neovim state
+
+```bash
+rm -rf ~/.local/share/nvim ~/.local/state/nvim ~/.cache/nvim
+```
+
+1. Install Neovim & core CLIs:
 
 ```bash
 # macOS
-brew install neovim
+brew install neovim ripgrep fd fzf git node python@3.12
 
 # Linux
 sudo apt install neovim  # Debian/Ubuntu
 sudo dnf install neovim  # Fedora
 ```
+
+Also install a Nerd Font for icons (eg: JetBrainsMono Nerd Font) and set it as your terminal's font.
 
 2. Create configuration directory:
 
@@ -86,6 +120,23 @@ git clone https://github.com/akashbagchi/dotfiles.git ~/.config/nvim
 ```bash
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+
+5. First neovim launch + Sourcing order:
+
+```bash
+# Open neovim
+nvim .
+
+# Inside neovim, do this in order
+:so ~/.config/nvim/lua/theprimagen/packer.lua
+:so ~/.config/nvim/init.lua
+:PackerSync
+:TSUpdate
+:Mason
+
+# Anytime you edit your config hereafter
+:so ~/.config/nvim/init.lua
 ```
 
 ## Platform-Specific Configuration Changes
