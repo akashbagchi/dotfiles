@@ -10,6 +10,8 @@ lsp.ensure_installed({
     'volar',             -- Vue
     'eslint',           -- ESLint
     'rust_analyzer',     -- Rust support
+    'pyright',          -- Python support
+    'tailwindcss'       -- Tailwind CSS support
 })
 
 -- Fix Undefined global 'vim'
