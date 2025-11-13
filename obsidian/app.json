@@ -1,0 +1,20 @@
+{
+  "spellcheck": true,
+  "promptDelete": true,
+  "alwaysUpdateLinks": true,
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 85
+  },
+  "foldHeading": false,
+  "foldIndent": false,
+  "propertiesInDocument": "visible",
+  "readableLineLength": true,
+  "showLineNumber": true,
+  "vimMode": true,
+  "showIndentGuide": false,
+  "newFileLocation": "current"
+}

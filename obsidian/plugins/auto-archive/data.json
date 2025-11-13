@@ -1,0 +1,18 @@
+{
+  "archiveConfigs": [
+    {
+      "sourceFolder": "Journal",
+      "destFolder": "Archived Notes",
+      "maintainFolderStructure": true,
+      "deleteEmptyFolders": false,
+      "days": 30
+    },
+    {
+      "sourceFolder": "",
+      "destFolder": "",
+      "maintainFolderStructure": true,
+      "deleteEmptyFolders": true,
+      "days": 30
+    }
+  ]
+}

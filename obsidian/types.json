@@ -1,0 +1,14 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "Type": "multitext",
+    "Date": "date",
+    "is_template": "checkbox",
+    "Status": "multitext",
+    "Project": "multitext",
+    "Deadline": "date",
+    "autoscroll-speed": "number"
+  }
+}
