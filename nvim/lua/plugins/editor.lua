@@ -1,4 +1,16 @@
 return {
+    -- Neo-tree
+    {
+        "nvim-neo-tree/neo-tree.nvim",
+        keys = {
+            {
+                "<leader>fe",
+                "<cmd>Neotree focus<cr>",
+                desc = "Focus Explorer",
+            },
+        },
+    },
+
     -- Harpoon
     {
         "theprimeagen/harpoon",
