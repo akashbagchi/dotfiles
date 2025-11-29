@@ -71,13 +71,13 @@ exec-on-workspace-change = ['/bin/bash', '-c', 'sketchybar --trigger aerospace_w
 [gaps]
     inner.horizontal = 4
     inner.vertical =   5
-    outer.left =       0
-    outer.bottom =     0
+    outer.left =       3
+    outer.bottom =     3
     outer.top =        [
         { monitor."built-in" = 25 },
         25
     ]
-    outer.right =      0
+    outer.right =      3
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes

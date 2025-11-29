@@ -2,7 +2,6 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-
 local keymap = vim.keymap.set
 
 -- Move lines in visual mode
@@ -48,11 +47,14 @@ keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 keymap("n", "<leader><leader>", "<cmd>so<CR>")
 
 -- Comments (Mac keybindings)
-keymap('n', '<D-/>', 'gcc', { remap = true })
-keymap('v', '<D-/>', 'gc', { remap = true })
-keymap('n', '<A-S-a>', 'gbc', { remap = true })
-keymap('v', '<A-S-a>', 'gb', { remap = true })
+keymap("n", "<D-/>", "gcc", { remap = true })
+keymap("v", "<D-/>", "gc", { remap = true })
+keymap("n", "<A-S-a>", "gbc", { remap = true })
+keymap("v", "<A-S-a>", "gb", { remap = true })
 
 -- Navigation shortcuts
-keymap('n', 'H', '^', { remap = true })
-keymap('n', 'L', '$', { remap = true })
+keymap("n", "H", "^", { remap = true })
+keymap("n", "L", "$", { remap = true })
+
+-- Pomodoro (timerly)
+keymap("n", "<leader>tl", "<cmd>TimerlyToggle<CR>")
